@@ -12,4 +12,4 @@ export const addUser = (login, password) =>
 			registed_id: generateDate(),
 			role_id: 2,
 		}),
-	});
+	}).then((createUser) => createUser.json());
