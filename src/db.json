@@ -4,14 +4,14 @@
       "id": "001",
       "login": "yasya",
       "password": "12345678",
-      "registed_id": "2024-01-12",
+      "registed_at": "2024-01-12",
       "role_id": 0
     },
     {
-      "id": "089a",
-      "login": "ivan",
-      "password": "12345678",
-      "registed_id": "2037-02-02 17:11",
+      "id": "e1b9",
+      "login": "regina",
+      "password": "123456",
+      "registed_at": "2036-08-26 14:02",
       "role_id": 2
     }
   ],

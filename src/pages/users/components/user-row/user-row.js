@@ -1,0 +1,71 @@
+import { useState } from "react";
+import { useServerRequest } from "../../../../hooks";
+import { Icon } from "../../../../components";
+import { TableRow } from "../table-row/table-row";
+import styled from "styled-components";
+
+const UserRowContainer = ({
+	className,
+	id: userId,
+	login,
+	registeredAt,
+	roleId: userRoleId,
+	roles,
+	onUserRemove,
+}) => {
+	const [selectedRoleId, setSelectedRoleId] = useState(userRoleId);
+	const [initialRoleId, setInitialRoleId] = useState(userRoleId);
+
+	const requestServer = useServerRequest();
+
+	const onRoleChange = ({ target }) => {
+		setSelectedRoleId(Number(target.value));
+	};
+
+	const onRoleSave = (userId, newUserRoleId) => {
+		requestServer("updateUserRole", userId, newUserRoleId).then(() => {
+			setInitialRoleId(newUserRoleId);
+		});
+	};
+
+	const isSaveButtonDisabled = selectedRoleId === initialRoleId;
+
+	return (
+		<div className={className}>
+			<TableRow border={true}>
+				<div className="login-col">{login}</div>
+				<div className="registered-at-col">{registeredAt}</div>
+				<div className="role-col">
+					<select value={selectedRoleId} onChange={onRoleChange}>
+						{roles.map(({ id: roleId, name: roleName }) => (
+							<option key={roleId} value={roleId}>
+								{roleName}
+							</option>
+						))}
+					</select>
+					<Icon
+						classIcon="fa-floppy-o"
+						margin="0 0 0 10px"
+						disabled={isSaveButtonDisabled}
+						onClick={() => onRoleSave(userId, selectedRoleId)}
+					/>
+				</div>
+			</TableRow>
+			<Icon
+				classIcon="fa-trash-o"
+				margin="0 0 0 10px"
+				onClick={onUserRemove}
+			/>
+		</div>
+	);
+};
+
+export const UserRow = styled(UserRowContainer)`
+	display: flex;
+	justify-content: space-between;
+	margin-top: 10px;
+
+	& select {
+		font-size: 14px;
+	}
+`;

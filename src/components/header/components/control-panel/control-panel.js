@@ -15,12 +15,6 @@ const RightAligned = styled.div`
 	justify-content: flex-end;
 `;
 
-const StyledIcon = styled.div`
-	&:hover {
-		cursor: pointer;
-	}
-`;
-
 const TopRightAligned = styled.div`
 	display: flex;
 	align-items: center;
@@ -50,16 +44,19 @@ const ControlPanelContainer = ({ className }) => {
 				) : (
 					<TopRightAligned>
 						<span>{login}</span>
-						<StyledIcon onClick={() => dispatch(logout(session))}>
-							<Icon classIcon="fa-sign-out" />
-						</StyledIcon>
+						<Icon
+							classIcon="fa-sign-out"
+							onClick={() => dispatch(logout(session))}
+						/>
 					</TopRightAligned>
 				)}
 			</RightAligned>
 			<RightAligned>
-				<StyledIcon onClick={() => navigate(-1)}>
-					<Icon classIcon="fa-backward" margin="15px 0 0 0" />
-				</StyledIcon>
+				<Icon
+					classIcon="fa-backward"
+					margin="15px 0 0 0"
+					onClick={() => navigate(-1)}
+				/>
 				<Link to="/post">
 					<Icon classIcon="fa-file-text-o" margin="15px 0 0 16px" />
 				</Link>
