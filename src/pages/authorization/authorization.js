@@ -70,6 +70,7 @@ const AuthorizationContainer = ({ className }) => {
 				setServerError(`Ошибка запроса: ${error}`);
 			} else {
 				dispatch(setUser(res));
+				sessionStorage.setItem("userData", JSON.stringify(res));
 			}
 		});
 	};

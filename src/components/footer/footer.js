@@ -19,7 +19,7 @@ const FooterContainer = ({ className }) => {
 	}, []);
 
 	return (
-		<div className={className}>
+		<footer className={className}>
 			<div>
 				<div>Блог веб-разработчика</div>
 				<div>web@developer.ru</div>
@@ -36,7 +36,7 @@ const FooterContainer = ({ className }) => {
 					{temperature} градусов, {weather}
 				</div>
 			</div>
-		</div>
+		</footer>
 	);
 };
 
@@ -44,6 +44,8 @@ export const Footer = styled(FooterContainer)`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	// position: fixed;
+	// bottom: 0;
 	width: inherit;
 	height: 120px;
 	padding: 20px 40px;

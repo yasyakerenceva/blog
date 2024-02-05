@@ -5,3 +5,8 @@ export * from "./logout";
 export * from "./register";
 export * from "./remove-user";
 export * from "./update-user-role";
+export * from "./fetch-post";
+export * from "./add-post-comment";
+export * from "./remove-post-comment";
+export * from "./save-post";
+export * from "./remove-post";

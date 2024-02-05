@@ -34,6 +34,11 @@ const ControlPanelContainer = ({ className }) => {
 	const session = useSelector(selectUserSession);
 	const dispatch = useDispatch();
 
+	const onLogout = () => {
+		dispatch(logout(session));
+		sessionStorage.removeItem("userData");
+	};
+
 	return (
 		<div className={className}>
 			<RightAligned>
@@ -44,10 +49,7 @@ const ControlPanelContainer = ({ className }) => {
 				) : (
 					<TopRightAligned>
 						<span>{login}</span>
-						<Icon
-							classIcon="fa-sign-out"
-							onClick={() => dispatch(logout(session))}
-						/>
+						<Icon classIcon="fa-sign-out" onClick={onLogout} />
 					</TopRightAligned>
 				)}
 			</RightAligned>

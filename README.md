@@ -18,7 +18,7 @@
 -   пользователи - users: id / login / password / registed_id / role_id
 -   роли - roles: id / name
 -   статьи - posts: id / title / image_url / content / published_at
--   комментарии - comments: id / author_id / post_id / cnontent
+-   комментарии - comments: id / author_id / post_id / content / published_at
 
 Схема состояния на BBF:
 
