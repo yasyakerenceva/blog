@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useServerRequest } from "../../../../hooks";
@@ -12,40 +12,46 @@ const PostFormContainer = ({
 	className,
 	post: { id, title, imageUrl, content, publishedAt },
 }) => {
-	const navigate = useNavigate();
-	const dispatch = useDispatch();
-	const imageRef = useRef(null);
-	const titleRef = useRef(null);
+	const [imageUrlValue, setImageUrlValue] = useState(imageUrl);
+	const [titleValue, setTitleValue] = useState(title);
 	const contentRef = useRef(null);
 
+	useLayoutEffect(() => {
+		setImageUrlValue(imageUrl);
+		setTitleValue(title);
+	}, [imageUrl, title]);
+
+	const navigate = useNavigate();
+	const dispatch = useDispatch();
 	const requestServer = useServerRequest();
 
 	const onSave = () => {
-		const newImageUrl = imageRef.current.value;
-		const newTitle = titleRef.current.value;
 		const newContent = sanitizeContent(contentRef.current.innerHTML);
 
 		dispatch(
 			savePostAsync(requestServer, {
 				id,
-				imageUrl: newImageUrl,
-				title: newTitle,
+				imageUrl: imageUrlValue,
+				title: titleValue,
 				content: newContent,
 			}),
-		).then(() => navigate(`/post/${id}`));
+		).then(({ id }) => navigate(`/post/${id}`));
 	};
+
+	const onImageChange = ({ target }) => setImageUrlValue(target.value);
+	const onTitleChange = ({ target }) => setTitleValue(target.value);
 
 	return (
 		<div className={className}>
 			<Input
-				ref={imageRef}
-				defaultValue={imageUrl}
+				value={imageUrlValue}
 				placeholder="Изображение"
+				onChange={onImageChange}
 			/>
 			<Input
-				ref={titleRef}
-				defaultValue={title}
+				value={titleValue}
 				placeholder="Заголовок"
+				onChange={onTitleChange}
 			/>
 			<SpecialPanel
 				id={id}
@@ -53,7 +59,7 @@ const PostFormContainer = ({
 				editButton={
 					<Icon
 						classIcon="fa-floppy-o"
-						margin="0 15px 0 0"
+						margin="0 0 0 0"
 						onClick={onSave}
 					/>
 				}
@@ -82,6 +88,8 @@ export const PostForm = styled(PostFormContainer)`
 
 	& .post-text {
 		margin-top: 14px;
+		min-height: 80px;
+		border: 1px solid #000;
 		font-size: 18px;
 		white-space: pre-line;
 	}
