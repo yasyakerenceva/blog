@@ -2,7 +2,7 @@ import { useLayoutEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setUser } from "./store/actions";
-import { Authorization, Post, Registration, Users } from "./pages";
+import { Authorization, Post, Registration, Users, Main } from "./pages";
 import { Footer, Header, Modal } from "./components";
 import styled from "styled-components";
 
@@ -16,7 +16,7 @@ const AppColumn = styled.div`
 	background-color: #fff;
 `;
 
-const Main = styled.div`
+const MainContainer = styled.div`
 	padding: 120px 0 0;
 `;
 
@@ -43,9 +43,9 @@ export const Blog = () => {
 	return (
 		<AppColumn>
 			<Header />
-			<Main>
+			<MainContainer>
 				<Routes>
-					<Route path="/" element={<div>Главная страница</div>} />
+					<Route path="/" element={<Main />} />
 					<Route path="/login" element={<Authorization />} />
 					<Route path="/register" element={<Registration />} />
 					<Route path="/users" element={<Users />} />
@@ -54,7 +54,7 @@ export const Blog = () => {
 					<Route path="/post/:id/edit" element={<Post />} />
 					<Route path="*" element={<div>Ошибка</div>} />
 				</Routes>
-			</Main>
+			</MainContainer>
 			<Footer />
 			<Modal />
 		</AppColumn>
