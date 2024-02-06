@@ -37,6 +37,7 @@ const SpecialPanelContainer = ({ className, id, publishedAt, editButton }) => {
 					<Icon
 						classIcon="fa-calendar-o"
 						margin="0 10px 0 0"
+						size="18px"
 						inactive={true}
 					/>
 				)}
@@ -48,6 +49,7 @@ const SpecialPanelContainer = ({ className, id, publishedAt, editButton }) => {
 					<Icon
 						classIcon="fa-trash-o"
 						margin="0 0 0 15px"
+						size="18px"
 						onClick={() => onPostRemove(id)}
 					/>
 				)}
@@ -66,18 +68,10 @@ export const SpecialPanel = styled(SpecialPanelContainer)`
 		display: flex;
 		align-items: center;
 		font-size: 18px;
-
-		& > div {
-			font-size: 18px;
-		}
 	}
 
 	& .right-panel {
 		display: flex;
 		align-items: center;
-
-		& > div {
-			font-size: 18px;
-		}
 	}
 `;

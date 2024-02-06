@@ -30,6 +30,7 @@ const CommentsContainer = ({ className, comments, postId }) => {
 				<Icon
 					classIcon="fa-paper-plane-o"
 					margin="10px 0 0 5px"
+					size="20px"
 					onClick={() => {
 						onNewCommentAdd(postId, userId, newComment);
 					}}
@@ -66,10 +67,6 @@ export const Comments = styled(CommentsContainer)`
 			width: calc(100% - 25px);
 			height: 100%;
 			resize: none;
-		}
-
-		& > div {
-			font-size: 20px;
 		}
 	}
 

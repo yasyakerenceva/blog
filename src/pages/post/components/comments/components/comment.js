@@ -43,6 +43,7 @@ const CommentContainer = ({
 						<Icon
 							classIcon="fa-user-circle-o"
 							margin="0 5px 0 0"
+							size="18px"
 							inactive={true}
 						/>
 						{author}
@@ -51,6 +52,7 @@ const CommentContainer = ({
 						<Icon
 							classIcon="fa-calendar-o"
 							margin="0 5px 0 0"
+							size="18px"
 							inactive={true}
 						/>
 						{publishedAt}
@@ -92,9 +94,5 @@ export const Comment = styled(CommentContainer)`
 	& .published-at {
 		display: flex;
 		align-items: center;
-
-		& > div {
-			font-size: 18px;
-		}
 	}
 `;

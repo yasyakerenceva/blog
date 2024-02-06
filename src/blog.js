@@ -7,6 +7,7 @@ import { Footer, Header, Modal } from "./components";
 import styled from "styled-components";
 
 const AppColumn = styled.div`
+	position: relative;
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column;

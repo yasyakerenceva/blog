@@ -21,6 +21,7 @@ const PostCardContainer = ({
 							<Icon
 								classIcon="fa-calendar-o"
 								margin="0 8px 0 0"
+								size="18px"
 								inactive={true}
 							/>
 							{publishedAt}
@@ -29,6 +30,7 @@ const PostCardContainer = ({
 							<Icon
 								classIcon="fa-comment-o"
 								margin="0 8px 0 0"
+								size="18px"
 								inactive={true}
 							/>
 							{commentsCount}
@@ -70,9 +72,5 @@ export const PostCard = styled(PostCardContainer)`
 	& .post-card-info-right {
 		display: flex;
 		align-items: center;
-
-		& > div {
-			font-size: 18px;
-		}
 	}
 `;
