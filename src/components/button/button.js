@@ -18,4 +18,8 @@ export const Button = styled(ButtonContainer)`
 	border: 1px solid #000;
 	background-color: #eee;
 	cursor: pointer;
+
+	&:disabled {
+		cursor: default;
+	}
 `;
