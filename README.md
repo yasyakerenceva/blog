@@ -18,7 +18,7 @@
 -   пользователи - users: id / login / password / registed_id / role_id
 -   роли - roles: id / name
 -   статьи - posts: id / title / image_url / content / published_at
--   комментарии - comments: id / author_id / post_id / cnontent
+-   комментарии - comments: id / author_id / post_id / content / published_at
 
 Схема состояния на BBF:
 
@@ -26,7 +26,7 @@
 
 Схема для redux store (клиент):
 
--   user: id / login / roleId
+-   user: id / login / roleId / session
 -   posts: array post: id / title / imageUrl / publishedAt / commentsCount
 -   post: id / title / imageUrl / content / publishedAt / comments : array comment:
     id / author / content / publishedAt
