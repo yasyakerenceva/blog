@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const TitleContainer = ({ children, className, ...props }) => {
@@ -13,3 +14,7 @@ export const Title = styled(TitleContainer)`
 	font-size: 32px;
 	font-weight: 600;
 `;
+
+Title.propTypes = {
+	children: PropTypes.node.isRequired,
+};

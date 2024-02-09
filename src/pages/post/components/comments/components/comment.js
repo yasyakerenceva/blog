@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 import { useServerRequest } from "../../../../../hooks";
 import {
@@ -103,3 +104,11 @@ export const Comment = styled(CommentContainer)`
 		align-items: center;
 	}
 `;
+
+Comment.propTypes = {
+	postId: PropTypes.string.isRequired,
+	id: PropTypes.string.isRequired,
+	author: PropTypes.string.isRequired,
+	content: PropTypes.string.isRequired,
+	publishedAt: PropTypes.string.isRequired,
+};

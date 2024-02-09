@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const ErrorFormContainer = ({ children, className }) => {
@@ -11,3 +12,7 @@ export const ErrorForm = styled(ErrorFormContainer)`
 	padding: 10px;
 	margin-top: 10px;
 `;
+
+ErrorForm.propTypes = {
+	children: PropTypes.node.isRequired,
+};
