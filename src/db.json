@@ -12,7 +12,14 @@
       "login": "regina",
       "password": "123456",
       "registed_at": "2036-08-26 14:02",
-      "role_id": 2
+      "role_id": 1
+    },
+    {
+      "login": "ivan",
+      "password": "123456",
+      "registed_at": "2062-02-15 17:05",
+      "role_id": 2,
+      "id": "sdCqQnS"
     }
   ],
   "roles": [
@@ -133,6 +140,13 @@
       "post_id": "002",
       "published_at": "2051-02-17 00:26",
       "content": "Супер!"
+    },
+    {
+      "author_id": "001",
+      "post_id": "009",
+      "published_at": "2043-05-02 02:29",
+      "content": "fggffg",
+      "id": "FfLYzyd"
     }
   ],
   "sessions": [
@@ -190,6 +204,28 @@
         "registeredAt": "2024-01-12",
         "roleId": 0
       }
+    },
+    {
+      "hash": "0.80561344677413737613846933527383953332901000976563",
+      "user": {
+        "id": "001",
+        "login": "yasya",
+        "password": "12345678",
+        "registeredAt": "2024-01-12",
+        "roleId": 0
+      },
+      "id": "SjKGPin"
+    },
+    {
+      "hash": "0.34619125408968520751784581079846248030662536621094",
+      "user": {
+        "login": "ivan",
+        "password": "123456",
+        "registed_at": "2062-02-15 17:05",
+        "role_id": 2,
+        "id": "sdCqQnS"
+      },
+      "id": "kqE2SxL"
     }
   ]
 }
