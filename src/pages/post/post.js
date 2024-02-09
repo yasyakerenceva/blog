@@ -4,10 +4,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { useServerRequest } from "../../hooks";
 import { loadPostAsync, RESET_POST_DATA } from "../../store/actions";
 import { selectPost } from "../../store/selectors";
+import { ROLE } from "../../constants";
 import { Error, PrivateContent } from "../../components";
 import { PostContent, PostForm, Comments } from "./components";
 import styled from "styled-components";
-import { ROLE } from "../../constants";
 
 const PostContainer = ({ className }) => {
 	const dispatch = useDispatch();

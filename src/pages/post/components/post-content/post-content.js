@@ -20,6 +20,7 @@ const PostContentContainer = ({
 					<Icon
 						classIcon="fa-pencil-square-o"
 						margin="0 0 0 0"
+						size="18px"
 						onClick={() => navigate(`/post/${id}/edit`)}
 					/>
 				}

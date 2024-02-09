@@ -143,10 +143,17 @@
     },
     {
       "author_id": "001",
-      "post_id": "009",
-      "published_at": "2043-05-02 02:29",
-      "content": "fggffg",
-      "id": "FfLYzyd"
+      "post_id": "003",
+      "published_at": "2057-01-07 03:53",
+      "content": "hello",
+      "id": "nWsxtuL"
+    },
+    {
+      "author_id": "001",
+      "post_id": "003",
+      "published_at": "2064-11-15 18:45",
+      "content": ":)",
+      "id": "aGdBza0"
     }
   ],
   "sessions": [
@@ -217,15 +224,15 @@
       "id": "SjKGPin"
     },
     {
-      "hash": "0.34619125408968520751784581079846248030662536621094",
+      "hash": "0.69330177886995492109178940154379233717918395996094",
       "user": {
-        "login": "ivan",
-        "password": "123456",
-        "registed_at": "2062-02-15 17:05",
-        "role_id": 2,
-        "id": "sdCqQnS"
+        "id": "001",
+        "login": "yasya",
+        "password": "12345678",
+        "registeredAt": "2024-01-12",
+        "roleId": 0
       },
-      "id": "kqE2SxL"
+      "id": "L1nufXZ"
     }
   ]
 }

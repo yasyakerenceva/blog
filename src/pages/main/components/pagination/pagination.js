@@ -35,7 +35,8 @@ export const Pagination = styled(PaginationContainer)`
 	position: absolute;
 	bottom: 160px;
 
-	& button {
+	& button,
+	& .current-page {
 		margin: 0 5px;
 	}
 
